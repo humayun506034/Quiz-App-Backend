@@ -24,6 +24,8 @@ const questionSchema = new Schema<IQuestions>(
   { timestamps: true }
 );
 
+questionSchema.index({ text: "text", domain: "text" });
+
 export const questionsModel = mongoose.model<IQuestions>(
   "Question",
   questionSchema

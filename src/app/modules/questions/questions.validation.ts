@@ -8,10 +8,8 @@ export const optionSchema = z.object({
 
 // Question schema validation
 export const questionsPostValidation = z.object({
-  questionNumber: z
-    .number({ message: "Question number must be a number" })
-    .int({ message: "Question number must be an integer" })
-    .positive({ message: "Question number must be positive" }),
+  // questionNumber: z
+  //   .number({ message: "Question number must be a number" }),
   text: z.string().nonempty({ message: "Question text is required" }),
   options: z
     .array(optionSchema)
@@ -22,8 +20,12 @@ export const questionsPostValidation = z.object({
     .nonnegative({ message: "Weight cannot be negative" }),
   inverted: z.boolean().optional(),
   part: z
-    .enum(["1", "2"], { message: "Part must be 1 (Main) or 2 (Follow-up)" })
+    .number({ message: "Part must be a number" })
+    .refine((val) => val === 1 || val === 2, {
+      message: "Part must be 1 (Main) or 2 (Follow-up)",
+    })
     .optional(),
+
   followUpTrigger: z.string().nullable().optional(),
 });
 

@@ -49,7 +49,7 @@ const files = {
 
   [`${moduleName}.controller.ts`]: `import { Request, Response } from "express";
     import { ${moduleName}Service } from "./${moduleName}.service";
-    import catchAsync from "../../utils/catchAsync";
+    import catchAsync from "../../utils/catch_async";
     import sendResponse from "../../utils/sendResponse";
     import status from "http-status";
     

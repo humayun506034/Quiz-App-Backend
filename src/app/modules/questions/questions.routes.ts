@@ -8,12 +8,13 @@ import validateRequest from "../../middlewares/validateSchema";
 
 const router = express.Router();
 
+router.get("/", questionsController.getAllQuestions);
+
 router.post(
   "/post_questions",
   validateRequest(questionsPostValidation),
   questionsController.postQuestions
 );
-router.get("/get_all_questions", questionsController.getAllQuestions);
 router.get("/get_single_questions/:id", questionsController.getSingleQuestions);
 router.put(
   "/update_questions/:id",
