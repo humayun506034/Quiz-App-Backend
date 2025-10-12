@@ -1,19 +1,19 @@
 import { Router } from "express";
-import { questionsRoutes } from "./app/modules/questions/questions.routes";
-import { categoryRoutes } from "./app/modules/category/category.routes";
+
+import { SurveyRoutes } from "./app/modules/survey/survey.routes";
+import { questionRoutes } from "./app/modules/question/question.routes";
 
 const appRouter = Router();
 
 const moduleRoutes = [
   {
-    path: "/questions",
-    route: questionsRoutes,
+    path: "/question",
+    route: questionRoutes,
   },
   {
-    path:"/category",
-    route:categoryRoutes
-  }
-
+    path: "/survey",
+    route: SurveyRoutes,
+  },
 ];
 moduleRoutes.forEach((route) => appRouter.use(route.path, route.route));
 export default appRouter;

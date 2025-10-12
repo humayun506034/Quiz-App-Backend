@@ -1,1 +1,0 @@
-export const questionSearchableFields = ["text", "domain"];
