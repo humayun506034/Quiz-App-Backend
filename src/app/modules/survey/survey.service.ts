@@ -230,8 +230,6 @@ const submitAnswer = async (
 };
 
 
-
-
 const getSurveyResult = async (surveyId: string) => {
   const survey = await SurveyResponse.findById(surveyId).populate(
     "responses.question"
