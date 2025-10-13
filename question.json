@@ -6,7 +6,9 @@
     "domain": "Personal Wellbeing",
     "weight": 2,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q2",
@@ -15,7 +17,9 @@
     "domain": "Burnout",
     "weight": 4,
     "isInverted": true,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q3",
@@ -24,7 +28,9 @@
     "domain": "Personal Wellbeing",
     "weight": 3,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q4",
@@ -38,7 +44,9 @@
     "domain": "Personal Wellbeing",
     "weight": 3,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q5",
@@ -47,7 +55,9 @@
     "domain": "Workload & Efficiency",
     "weight": 3,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Workload & Efficiency",
+    "dashboardDomainWeight": 12
   },
   {
     "id": "Q6",
@@ -56,7 +66,9 @@
     "domain": "Workload & Efficiency",
     "weight": 4,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Workload & Efficiency",
+    "dashboardDomainWeight": 12
   },
   {
     "id": "Q7",
@@ -65,7 +77,9 @@
     "domain": "Workload & Efficiency",
     "weight": 5,
     "isInverted": true,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Workload & Efficiency",
+    "dashboardDomainWeight": 12
   },
   {
     "id": "Q8",
@@ -74,7 +88,9 @@
     "domain": "Workplace Satisfaction",
     "weight": 3,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q9",
@@ -83,7 +99,9 @@
     "domain": "Leadership & Alignment",
     "weight": 4,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Leadership & Alignment",
+    "dashboardDomainWeight": 9
   },
   {
     "id": "Q10",
@@ -92,7 +110,9 @@
     "domain": "Coworker Relationships",
     "weight": 3,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q11",
@@ -101,7 +121,9 @@
     "domain": "Coworker Relationships",
     "weight": 2,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q12",
@@ -110,7 +132,9 @@
     "domain": "Coworker Relationships",
     "weight": 3,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q13",
@@ -119,7 +143,9 @@
     "domain": "Workplace Satisfaction",
     "weight": 4,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q14",
@@ -128,7 +154,9 @@
     "domain": "Psych. Safety",
     "weight": 4,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainWeight": 30
   },
   {
     "id": "Q15",
@@ -142,7 +170,9 @@
     "domain": "Psych. Safety",
     "weight": 5,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainWeight": 30
   },
   {
     "id": "Q16",
@@ -151,7 +181,9 @@
     "domain": "Psych. Safety",
     "weight": 4,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainWeight": 30
   },
   {
     "id": "Q17",
@@ -160,7 +192,9 @@
     "domain": "Psych. Safety",
     "weight": 4,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainWeight": 30
   },
   {
     "id": "Q18",
@@ -169,7 +203,9 @@
     "domain": "Psych. Safety",
     "weight": 5,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainWeight": 30
   },
   {
     "id": "Q19",
@@ -178,7 +214,9 @@
     "domain": "Psych. Safety",
     "weight": 5,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainWeight": 30
   },
   {
     "id": "Q20",
@@ -192,7 +230,9 @@
     "domain": "Depression Risk",
     "weight": 15,
     "isInverted": true,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q21",
@@ -206,7 +246,9 @@
     "domain": "Anxiety Risk",
     "weight": 15,
     "isInverted": true,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q22",
@@ -220,7 +262,9 @@
     "domain": "Anxiety Risk",
     "weight": 5,
     "isInverted": true,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q23",
@@ -234,7 +278,9 @@
     "domain": "Mental Health Risk",
     "weight": 5,
     "isInverted": true,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q24",
@@ -248,7 +294,9 @@
     "domain": "Burnout Risk",
     "weight": 5,
     "isInverted": true,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q25",
@@ -257,9 +305,10 @@
     "domain": "Fairness & Recognition",
     "weight": 5,
     "isInverted": false,
-    "isFollowUp": false
+    "isFollowUp": false,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
-
   {
     "id": "Q26",
     "question": "Over the last two weeks, how often have you felt frustrated by your work or gotten the feeling that you work too hard?",
@@ -272,7 +321,9 @@
     "domain": "Burnout Intensity",
     "weight": 10,
     "isInverted": true,
-    "isFollowUp": true
+    "isFollowUp": true,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q27",
@@ -286,7 +337,9 @@
     "domain": "Depression Severity",
     "weight": 10,
     "isInverted": true,
-    "isFollowUp": true
+    "isFollowUp": true,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q28",
@@ -300,7 +353,9 @@
     "domain": "Anxiety Severity",
     "weight": 10,
     "isInverted": true,
-    "isFollowUp": true
+    "isFollowUp": true,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q29",
@@ -314,7 +369,9 @@
     "domain": "Anxiety Symptom",
     "weight": 5,
     "isInverted": true,
-    "isFollowUp": true
+    "isFollowUp": true,
+    "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainWeight": 45
   },
   {
     "id": "Q30",
@@ -323,7 +380,9 @@
     "domain": "Health Impact",
     "weight": 5,
     "isInverted": true,
-    "isFollowUp": true
+    "isFollowUp": true,
+    "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainWeight": 15
   },
   {
     "id": "Q31",
@@ -332,7 +391,9 @@
     "domain": "Root Cause Intensity",
     "weight": 5,
     "isInverted": true,
-    "isFollowUp": true
+    "isFollowUp": true,
+    "dashboardDomain": "Workload & Efficiency",
+    "dashboardDomainWeight": 12
   },
   {
     "id": "Q32",
@@ -341,7 +402,9 @@
     "domain": "Fear/Blame Intensity",
     "weight": 5,
     "isInverted": true,
-    "isFollowUp": true
+    "isFollowUp": true,
+    "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainWeight": 30
   },
   {
     "id": "Q33",
@@ -350,6 +413,8 @@
     "domain": "Trust Refinement",
     "weight": 3,
     "isInverted": true,
-    "isFollowUp": true
+    "isFollowUp": true,
+    "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainWeight": 30
   }
 ]
