@@ -33,8 +33,6 @@ const startSurvey = async (payload: TUser) => {
   };
 };
 
-
-
 const submitAnswer = async (
   surveyId: string,
   payload: { questionId: string; answerIndex: number }
@@ -71,17 +69,22 @@ const submitAnswer = async (
   //  Validate question belongs to this survey
   const allQuestionIds = [
     ...survey.questions.map((q: any) => q._id.toString()),
-    ...(survey.followUpQuestions || []).map((q: any) => q._id.toString())
+    ...(survey.followUpQuestions || []).map((q: any) => q._id.toString()),
   ];
 
   if (!allQuestionIds.includes(questionId)) {
-    throw new AppError("Invalid question ID for this survey.", httpStatus.BAD_REQUEST);
+    throw new AppError(
+      "Invalid question ID for this survey.",
+      httpStatus.BAD_REQUEST
+    );
   }
 
   // Get the question object (main or follow-up)
   const question =
     survey.questions.find((q: any) => q._id.toString() === questionId) ||
-    survey.followUpQuestions.find((q: any) => q._id.toString() === questionId) as any;
+    (survey.followUpQuestions.find(
+      (q: any) => q._id.toString() === questionId
+    ) as any);
 
   if (!question) {
     throw new AppError("Question not found.", httpStatus.NOT_FOUND);
@@ -96,10 +99,22 @@ const submitAnswer = async (
   }
 
   //  Update high-risk count (for main & follow-up questions)
-  if (!survey.highRiskCount) survey.highRiskCount = 0;
-  if (answerIndex === 0 || answerIndex === 1) {
-    survey.highRiskCount += 1;
+  // if (!survey.highRiskCount) survey.highRiskCount = 0;
+
+  if (question.isInverted === false) {
+    if (answerIndex === 0 || answerIndex === 1) {
+      survey.highRiskCount = survey.highRiskCount + 1;
+    }
   }
+  if (question.isInverted === true) {
+    if (answerIndex === 2 || answerIndex === 3) {
+      survey.highRiskCount = survey.highRiskCount + 1;
+    }
+  }
+
+  // if (answerIndex === 0 || answerIndex === 1) {
+  //   survey.highRiskCount += 1;
+  // }
 
   //  Save the response
   survey.responses.push({
@@ -138,38 +153,35 @@ const submitAnswer = async (
   return populatedSurvey;
 };
 
-
 const getSurveyResult = async (surveyId: string) => {
-  const survey = await SurveyResponse.findById(surveyId).populate(
-    "responses.question"
-  );
+  const survey = await SurveyResponse.findById(surveyId)
+    .populate("questions")
+    .populate("followUpQuestions")
+    .populate("responses.question");
+  if (!survey) throw new AppError("Survey not found", httpStatus.NOT_FOUND);
+  const totalQuestionCount =
+    survey.questions.length + (survey.followUpQuestions?.length || 0);
+  const calculatedWeightedRaw = survey.responses.map((res: any) => {
+    const question = res.question as any;
+    const weight = question.weight;
+    const score = res.score;
 
-  if (!survey) {
-    throw new AppError("Survey result not found.", httpStatus.NOT_FOUND);
-  }
 
-  if (survey.status !== "completed") {
-    throw new AppError("Survey is not yet completed.", httpStatus.BAD_REQUEST);
-  }
 
-  let followUpQuestions = [];
-  if (survey.highRiskCount >= 2) {
-    followUpQuestions = await questionModel.aggregate([
-      { $match: { isFollowUp: true } },
-      { $sample: { size: 3 } },
-    ]);
-  }
-
-  // Only return the _ids of follow-up questions
-  const followUpQuestionIds = followUpQuestions.map(q => q._id);
-
-  return {
-    survey: {
-      ...survey.toObject(),
-      followUpQuestions: followUpQuestionIds,
-    },
-  };
+    return {
+      // questionId: question._id,
+      question,
+      //If client send answer his weigh is parcent value or not then we need to convert it to parcent value count it a normal value
+      weightedValue: (weight / 100) * score,
+      
+    };
+  });
+  return { survey, totalQuestionCount, calculatedWeightedRaw };
 };
+
+
+
+
 
 
 export const SurveyService = {
