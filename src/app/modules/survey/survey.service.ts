@@ -166,23 +166,15 @@ const getSurveyResult = async (surveyId: string) => {
     const weight = question.weight;
     const score = res.score;
 
-
-
     return {
       // questionId: question._id,
       question,
       //If client send answer his weigh is parcent value or not then we need to convert it to parcent value count it a normal value
       weightedValue: (weight / 100) * score,
-      
     };
   });
   return { survey, totalQuestionCount, calculatedWeightedRaw };
 };
-
-
-
-
-
 
 export const SurveyService = {
   startSurvey,
