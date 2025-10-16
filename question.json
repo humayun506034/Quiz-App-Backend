@@ -8,6 +8,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -19,6 +20,7 @@
     "isInverted": true,
     "isFollowUp": false,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -30,6 +32,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -46,6 +49,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -57,6 +61,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Workload & Efficiency",
+    "dashboardDomainMaxPossibleScore": 48,
     "dashboardDomainWeight": 12
   },
   {
@@ -68,6 +73,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Workload & Efficiency",
+    "dashboardDomainMaxPossibleScore": 48,
     "dashboardDomainWeight": 12
   },
   {
@@ -79,6 +85,7 @@
     "isInverted": true,
     "isFollowUp": false,
     "dashboardDomain": "Workload & Efficiency",
+    "dashboardDomainMaxPossibleScore": 48,
     "dashboardDomainWeight": 12
   },
   {
@@ -90,6 +97,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -101,6 +109,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Leadership & Alignment",
+    "dashboardDomainMaxPossibleScore": 36,
     "dashboardDomainWeight": 9
   },
   {
@@ -112,6 +121,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -123,6 +133,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -134,6 +145,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -145,6 +157,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -156,6 +169,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainMaxPossibleScore": 120,
     "dashboardDomainWeight": 30
   },
   {
@@ -172,6 +186,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainMaxPossibleScore": 120,
     "dashboardDomainWeight": 30
   },
   {
@@ -183,6 +198,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainMaxPossibleScore": 120,
     "dashboardDomainWeight": 30
   },
   {
@@ -194,6 +210,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainMaxPossibleScore": 120,
     "dashboardDomainWeight": 30
   },
   {
@@ -205,6 +222,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainMaxPossibleScore": 120,
     "dashboardDomainWeight": 30
   },
   {
@@ -216,6 +234,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainMaxPossibleScore": 120,
     "dashboardDomainWeight": 30
   },
   {
@@ -232,6 +251,7 @@
     "isInverted": true,
     "isFollowUp": false,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -248,6 +268,7 @@
     "isInverted": true,
     "isFollowUp": false,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -264,6 +285,7 @@
     "isInverted": true,
     "isFollowUp": false,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -280,6 +302,7 @@
     "isInverted": true,
     "isFollowUp": false,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -296,6 +319,7 @@
     "isInverted": true,
     "isFollowUp": false,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -307,6 +331,7 @@
     "isInverted": false,
     "isFollowUp": false,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -323,6 +348,7 @@
     "isInverted": true,
     "isFollowUp": true,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -339,6 +365,7 @@
     "isInverted": true,
     "isFollowUp": true,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -355,6 +382,7 @@
     "isInverted": true,
     "isFollowUp": true,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -371,6 +399,7 @@
     "isInverted": true,
     "isFollowUp": true,
     "dashboardDomain": "Clinical Risk Index",
+    "dashboardDomainMaxPossibleScore": 180,
     "dashboardDomainWeight": 45
   },
   {
@@ -382,6 +411,7 @@
     "isInverted": true,
     "isFollowUp": true,
     "dashboardDomain": "Satisfaction & Engagement",
+    "dashboardDomainMaxPossibleScore": 60,
     "dashboardDomainWeight": 15
   },
   {
@@ -393,6 +423,7 @@
     "isInverted": true,
     "isFollowUp": true,
     "dashboardDomain": "Workload & Efficiency",
+    "dashboardDomainMaxPossibleScore": 48,
     "dashboardDomainWeight": 12
   },
   {
@@ -404,6 +435,7 @@
     "isInverted": true,
     "isFollowUp": true,
     "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainMaxPossibleScore": 120,
     "dashboardDomainWeight": 30
   },
   {
@@ -415,6 +447,7 @@
     "isInverted": true,
     "isFollowUp": true,
     "dashboardDomain": "Psychological Safety Index",
+    "dashboardDomainMaxPossibleScore": 120,
     "dashboardDomainWeight": 30
   }
 ]
