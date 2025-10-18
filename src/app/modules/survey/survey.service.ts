@@ -1,13 +1,26 @@
+import { questionModel } from './../question/question.model';
 import httpStatus from "http-status";
 
 import { TUser } from "./survey.interface";
 import { SurveyResponse } from "./survey.model";
 import { AppError } from "../../utils/app_error";
-import { questionModel } from "../question/question.model";
 
 const startSurvey = async (payload: TUser) => {
+  const dashboardDomains = [
+    "Clinical Risk Index",
+    "Psychological Safety Index",
+    "Workload & Efficiency",
+    "Leadership & Alignment",
+    "Satisfaction & Engagement",
+  ];
+
+  const randomDomain =
+    dashboardDomains[Math.floor(Math.random() * dashboardDomains.length)];
+
+  console.log({ randomDomain });
+
   const questions = await questionModel.aggregate([
-    { $match: { isFollowUp: false } },
+    { $match: { isFollowUp: false, dashboardDomain: randomDomain } },
     { $sample: { size: 5 } },
   ]);
 
@@ -86,6 +99,8 @@ const submitAnswer = async (
       (q: any) => q._id.toString() === questionId
     ) as any);
 
+  // console.log({question})
+
   if (!question) {
     throw new AppError("Question not found.", httpStatus.NOT_FOUND);
   }
@@ -129,9 +144,15 @@ const submitAnswer = async (
     (!survey.followUpQuestions || survey.followUpQuestions.length === 0)
   ) {
     const followUps = await questionModel.aggregate([
-      { $match: { isFollowUp: true } },
-      { $sample: { size: 3 } },
+      {
+        $match: { isFollowUp: true, dashboardDomain: question.dashboardDomain },
+      },
     ]);
+
+    // const followUps = await questionModel.find({
+    //   isFollowUp: true,
+    //   dashboardDomain: question.dashboardDomain,
+    // });
     survey.followUpQuestions = followUps.map((q) => q._id);
   }
 

@@ -6,4 +6,7 @@ export interface Question {
   weight: number;
   isInverted: boolean;
   isFollowUp: boolean;
+  dashboardDomain: string;
+  dashboardDomainMaxPossibleScore: number;
+  dashboardDomainWeight: number;
 }
