@@ -4,6 +4,11 @@ import { SurveyController } from './survey.controller';
 
 const router = express.Router();
 
+router.get(
+  '/',
+  SurveyController.getAllServeysResult,
+);
+
 router.post(
   '/start',
   SurveyController.startSurvey,

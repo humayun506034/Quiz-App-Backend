@@ -1,4 +1,4 @@
-import { questionModel } from './../question/question.model';
+import { questionModel } from "./../question/question.model";
 import httpStatus from "http-status";
 
 import { TUser } from "./survey.interface";
@@ -17,7 +17,7 @@ const startSurvey = async (payload: TUser) => {
   const randomDomain =
     dashboardDomains[Math.floor(Math.random() * dashboardDomains.length)];
 
-  console.log({ randomDomain });
+  // console.log({ randomDomain });
 
   const questions = await questionModel.aggregate([
     { $match: { isFollowUp: false, dashboardDomain: randomDomain } },
@@ -188,17 +188,128 @@ const getSurveyResult = async (surveyId: string) => {
     const score = res.score;
 
     return {
-      // questionId: question._id,
-      question,
+      questionId: question.id,
+      question: question.question,
+      options: question.options,
       //If client send answer his weigh is parcent value or not then we need to convert it to parcent value count it a normal value
-      weightedValue: (weight / 100) * score,
+      WRS: (weight / 100) * score,
     };
   });
-  return { survey, totalQuestionCount, calculatedWeightedRaw };
+
+  const totalWRS = calculatedWeightedRaw.reduce(
+    (acc: number, cur: any) => acc + cur.weightedValue,
+    0
+  );
+
+  const question = survey.questions[0] as any;
+  console.log(question);
+
+  const DomainMaxPossibleScore = question?.dashboardDomainMaxPossibleScore || 1;
+
+  // console.log(DomainScore)
+
+  const DomainScore = (totalWRS / DomainMaxPossibleScore) * 100;
+
+  // console.log(survey)
+  // console.log(totalWRS)
+  return {
+    survey,
+    totalQuestionCount,
+    totalWRS,
+    DomainScore,
+    calculatedWeightedRaw,
+  };
+};
+
+const getAllServeysResult = async (status: "completed" | "in-progress") => {
+  let surveys: any;
+
+  if (status) {
+    if (status === "completed") {
+      surveys = await SurveyResponse.find({ status: "completed" }).select(
+        "user highRiskCount status"
+      );
+    } else if (status === "in-progress") {
+      surveys = await SurveyResponse.find({ status: "in-progress" }).select(
+        "user highRiskCount status"
+      );
+    }
+  } else {
+    surveys = await SurveyResponse.find().select("user highRiskCount status");
+  }
+
+  const totalCompletedSurveys = await SurveyResponse.countDocuments({
+    status: "completed",
+  });
+
+  const totalIncompletedSurveys = await SurveyResponse.countDocuments({
+    status: "in-progress",
+  });
+
+  const totalSurverys = await SurveyResponse.countDocuments();
+  // console.log(totalIncompletedSurveys);
+  // console.log(totalCompletedSurveys)
+  // .populate("questions")
+  // .populate("followUpQuestions")
+  // .populate("responses.question");
+
+  // if (!surveys || surveys.length === 0) {
+  //   throw new AppError("No surveys found", httpStatus.NOT_FOUND);
+  // }
+
+  // const allResults = surveys.map((survey: any) => {
+  //   const totalQuestionCount =
+  //     (survey.questions?.length || 0) +
+  //     (survey.followUpQuestions?.length || 0);
+
+  //   const calculatedWeightedRaw = survey.responses
+  //     .filter((res: any) => res?.question) // null question বাদ দিচ্ছি
+  //     .map((res: any) => {
+  //       const question = res.question as any;
+  //       const weight = question?.weight || 0;
+  //       const score = res?.score || 0;
+
+  //       return {
+  //         questionId: question?._id || null,
+  //         question: question?.question || "Unknown Question",
+  //         options: question?.options || [],
+  //         WRS: (weight / 100) * score,
+  //       };
+  //     });
+
+  //   const totalWRS = calculatedWeightedRaw.reduce(
+  //     (acc: number, cur: any) => acc + (cur.WRS || 0),
+  //     0
+  //   );
+
+  //   const firstQuestion = survey.questions?.[0] as any;
+  //   const DomainMaxPossibleScore =
+  //     firstQuestion?.dashboardDomainMaxPossibleScore || 1;
+
+  //   const DomainScore = (totalWRS / DomainMaxPossibleScore) * 100;
+
+  //   return {
+  //     surveyId: survey._id,
+  //     totalQuestionCount,
+  //     totalWRS,
+  //     DomainScore,
+  //     calculatedWeightedRaw,
+  //   };
+  // });
+
+  // return allResults;
+
+  return {
+    surveys,
+    totalSurverys,
+    totalCompletedSurveys,
+    totalIncompletedSurveys,
+  };
 };
 
 export const SurveyService = {
   startSurvey,
   submitAnswer,
   getSurveyResult,
+  getAllServeysResult,
 };

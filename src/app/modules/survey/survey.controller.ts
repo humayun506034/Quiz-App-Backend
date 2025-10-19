@@ -37,9 +37,23 @@ const getSurveyResult = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const getAllServeysResult = catchAsync(async (req, res) => {
+
+  const {status}= req.query
+
+  const result = await SurveyService.getAllServeysResult(status as "completed" | "in-progress");
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Survey result fetched successfully',
+    data: result,
+  });
+});
 
 export const SurveyController = {
   startSurvey,
   submitAnswer,
   getSurveyResult,
+  getAllServeysResult
 };
